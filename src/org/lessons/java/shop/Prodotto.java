@@ -30,7 +30,7 @@ public class Prodotto {
     protected void setPrice(BigDecimal theprice){price=theprice;}
     protected void setTax(BigDecimal thetax){tax=thetax;}
 
-    protected void printInfo(){
-        System.out.printf("Code: %d, Name: %s, Brand: %s, Price: %s, Tax: %s %n",codex,name,brand,price.toPlainString(),tax.toPlainString());  //%n x a capo
+    public String toString(){  //usa sempre public x toString()(è una class obj, ereditato da TUTTE le classi)!
+        return String.format("Code: %d, Name: %s, Brand: %s, Price: %s, Tax: %s", codex, name.trim(), brand.trim(), price.toPlainString(), tax.toPlainString());  //toPlainString() x convert bigdecimal
     }
 }

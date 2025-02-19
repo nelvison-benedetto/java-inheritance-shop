@@ -19,8 +19,7 @@ public class Smartphone extends Prodotto{
     protected void setRom(int therom){rom=therom;}
 
     @Override
-    protected void printInfo(){
-        System.out.printf("Code: %d, Name: %s, Brand: %s, Price: %s, Tax: %s, Imei: %d, Rom: %d %n",getCodex(),getName(),getBrand(),getPrice().toPlainString(),getTax().toPlainString(),imei,rom);  //%n x a capo
+    public String toString(){  //usa sempre public x toString()(è una class obj, ereditato da TUTTE le classi)!
+        return String.format("Code: %d, Name: %s, Brand: %s, Price: %s, Tax: %s, Imei: %d, Rom: %d", this.getCodex(), this.getName().trim(), this.getBrand().trim(), this.getPrice().toPlainString(), this.getTax().toPlainString(), this.imei, this.rom);  //use getX x  get data, toPlainString() x convert bigdecimal
     }
-
 }
